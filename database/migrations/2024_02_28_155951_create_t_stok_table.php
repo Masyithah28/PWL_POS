@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t_penjualan', function (Blueprint $table) {
-            $table->id('penjualan_id');
+        Schema::create('t_stok', function (Blueprint $table) {
+            $table->id('stok_id');
+            $table->unsignedBigInteger('barang_id')->index();
             $table->unsignedBigInteger('user_id')->index();
-            $table->string('pembeli', 50);
-            $table->string('penjualan_kode', 20);
-            $table->dateTime('penjualan_tanggal');
+            $table->dateTime('stok_tanggal');
+            $table->integer('stok_jumlah');
             $table->timestamps();
-    
+
+            //Mendefinisikan Foreign key
+            $table->foreign('barang_id')->references('barang_id')->on('m_barang');
             $table->foreign('user_id')->references('user_id')->on('m_user');
-    
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t_penjualan');
+        Schema::dropIfExists('t_stok');
     }
 };
