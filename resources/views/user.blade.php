@@ -13,8 +13,8 @@
 <th>Username</th>
 <th>Nama</th>
 <th>ID Level Pengguna</th>
-{{-- <td>Kode Level</td>
-<td>Nama Level</td> --}}
+<td>Kode Level</td>
+<td>Nama Level</td>
 <th>Aksi</th>
 </tr>
 @foreach ($data as $d)
@@ -23,6 +23,8 @@
     <td>{{ $d->username }}</td>
     <td>{{ $d->nama }}</td>
     <td>{{ $d->level_id }}</td>
+    <td>{{ $d->level->level_kode}}</td>
+    <td>{{ $d->level->level_kode }}</td>
     <td><a href="/user/ubah/{{ $d->user_id}}">Ubah</a> | <a href="/user/hapus/{{ $d->user_id}}">Hapus</a></td>
 @endforeach
 </table>
