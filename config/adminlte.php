@@ -322,6 +322,12 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
+        [
+            //Tugas jb 5 soal 2
+            'text' => 'Kategori',
+            'url' => '/kategori',
+            'icon' => 'far fa-fw fa-list-alt',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
