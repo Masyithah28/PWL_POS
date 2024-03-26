@@ -12,8 +12,8 @@ class POSController extends Controller
      */
     public function index()
     {
-        $user = m_user::all(); // Mengambil semua isi tabel 
-        return view('m_user.index', compact('user'))->with('i');
+        $useri = m_user::all(); // Mengambil semua isi tabel 
+        return view('m_user.index', compact('useri'))->with('i');
     }
 
     /**

@@ -389,6 +389,12 @@ return [
             'url' => '/level',
             'icon' => 'far fa-fw fa-list-alt',
         ],
+        [
+            //Tugas jb 6  
+            'text' => 'M_User',
+            'url' => 'm_user',
+            'icon' => 'far fa-fw fa-list-alt',
+        ],
         ['header' => 'labels'],
         [
             'text' => 'important',
