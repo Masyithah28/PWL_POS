@@ -322,12 +322,6 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
-        [
-            //Tugas jb 5 soal 2
-            'text' => 'Kategori',
-            'url' => '/kategori',
-            'icon' => 'far fa-fw fa-list-alt',
-        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -338,6 +332,12 @@ return [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            //Tugas jb 5 soal 2
+            'text' => 'Manage Kategori',
+            'url' => '/kategori',
+            'icon' => 'far fa-fw fa-list-alt',
         ],
         [
             'text' => 'multilevel',
@@ -376,6 +376,18 @@ return [
                     'url' => '#',
                 ],
             ],
+        ],
+        [
+            //Tugas jb 6 A soal 9
+            'text' => 'Manage User',
+            'url' => '/user',
+            'icon' => 'far fa-fw fa-list-alt',
+        ],
+        [
+            //Tugas jb 6 A soal 9
+            'text' => 'Manage Level',
+            'url' => '/level',
+            'icon' => 'far fa-fw fa-list-alt',
         ],
         ['header' => 'labels'],
         [
