@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\LevelDataTable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Monolog\Level;
+use Illuminate\View\view;
 
 class LevelController extends Controller
 {
@@ -26,17 +29,25 @@ class LevelController extends Controller
         return $dataTable->render('level.index');
     }
 
-    public function create()
+    public function create(): View 
     {
         return view('level.create');
     }
-    public function store(Request $request)
+
+    public function store(Request $request): RedirectResponse
     {
-        LevelModel::create([
-            // 'level_id' => $request->levelId,
-            'level_kode' => $request->kodeLevel,
-            'level_nama' => $request->namaLevel,
+        // LevelModel::create([
+        //     // 'level_id' => $request->levelId,
+        //     'level_kode' => $request->kodeLevel,
+        //     'level_nama' => $request->namaLevel,
+        $validated = $request->validate([
+            'level_id' => 'required',
+            'level_kode' => 'required',
+            'level_nama' => 'required',
         ]);
+        $validated = $request->safe()->only(['level_kode', 'level_nama']);
+        $validated = $request->safe()->except(['level_kode', 'level_nama']);;
+    
         return redirect('/level');
     }
 }

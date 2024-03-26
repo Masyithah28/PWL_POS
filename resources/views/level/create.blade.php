@@ -13,9 +13,9 @@
             <form method="post" action="../level">
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="kodeLevel">Level Kode</label>
-                        <input type="text" class="form-control" id="kodeLevel" name="kodeLevel" placeholder="Kode Level">
-                        {{-- <label for="level_kode">Kode Level</label>
+                        {{-- <label for="kodeLevel">Level Kode</label>
+                        <input type="text" class="form-control" id="kodeLevel" name="kodeLevel" placeholder="Kode Level"> --}}
+                        <label for="level_kode">Kode Level</label>
                         <input id="level_kode"
                             type="text"
                             name="level_kode"
@@ -23,12 +23,12 @@
 
                         @error('level_kode')
                             <div class = "alert alert-danger">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
                     </div>
                     <div class="form-group">
-                        <label for="namaLevel">Level Nama</label>
-                        <input type="text" class="form-control" id="namaLevel" name="namaLevel" placeholder="Nama Level">
-                        {{-- <label for="level_nama">Nama Level</label>
+                        {{-- <label for="namaLevel">Level Nama</label>
+                        <input type="text" class="form-control" id="namaLevel" name="namaLevel" placeholder="Nama Level"> --}}
+                        <label for="level_nama">Nama Level</label>
                         <input id="level_nama"
                             type="text"
                             name="level_nama"
@@ -36,7 +36,7 @@
 
                         @error('level_nama')
                             <div class = "alert alert-danger">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
                     </div>
                 </div>
                 <div class="card-footer">

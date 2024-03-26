@@ -1,15 +1,44 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\KategoriModel;
-use Illuminate\Http\Request;
 use App\DataTables\KategoriDataTable;
+use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\StorePostRequestKategori;
+use App\Models\KategoriModel;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
 use Illuminate\View\view;
 
 class KategoriController extends Controller
 {
+
+    public function index(KategoriDataTable $dataTable)
+    {
+        return $dataTable->render('kategori.index');
+    }
+
+    public function create(): View 
+    {
+        return view('kategori.create');
+    }
+
+    public function store(Request $request): RedirectResponse
+    {
+        
+        // KategoriModel::create([
+        //     'kategori_kode' => $request->kodeKategori,
+        //     'kategori_nama' => $request->namaKategori,
+        // ]);
+        $validated = $request->validate([
+            'kategori_kode' => 'required',
+            'kategori_nama' => 'required',
+        ]);
+        $validated = $request->safe()->only(['kategori_kode', 'kategori_nama']);
+        $validated = $request->safe()->except(['kategori_kode', 'kategori_nama']);
+
+    return redirect('/kategori');
+    }
+
     // public function update($id)
     // {
     // $kategori = KategoriModel :: find($id);
@@ -34,27 +63,4 @@ class KategoriController extends Controller
 
     //     return redirect('/kategori');
     // }
-
-    public function index(KategoriDataTable $dataTable)
-    {
-        return $dataTable->render('kategori.index');
-    }
-
-    public function create(): View 
-    {
-        return view('kategori.create');
-    }
-
-    public function store(Request $request): RedirectResponse
-    {
-        // KategoriModel::create([
-        //     'kategori_kode' => $request->kodeKategori,
-        //     'kategori_nama' => $request->namaKategori,
-        // ]);
-        $validated = $request->validate([
-            'kategori_kode' => 'required',
-            'kategori_nama' => 'required',
-        ]);
-    return redirect('/kategori');
-    }
 }

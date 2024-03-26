@@ -13,9 +13,9 @@
             <form method="post" action="../user">
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                        {{-- <label for="user_username">Username</label>
+                        {{-- <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username"> --}}
+                        <label for="user_username">Username</label>
                         <input id="user_username"
                             type="text"
                             name="user_username"
@@ -23,12 +23,12 @@
 
                         @error('user_username')
                             <div class = "alert alert-danger">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
                     </div>
                     <div class="form-group">
-                        <label for="namaUser">Nama</label>
-                        <input type="text" class="form-control" id="namaUser" name="namaUser" placeholder="Nama">
-                        {{-- <label for="user_nama">Nama User</label>
+                        {{-- <label for="namaUser">Nama</label>
+                        <input type="text" class="form-control" id="namaUser" name="namaUser" placeholder="Nama"> --}}
+                        <label for="user_nama">Nama User</label>
                         <input id="user_nama"
                             type="text"
                             name="user_nama"
@@ -36,12 +36,12 @@
 
                         @error('user_nama')
                             <div class = "alert alert-danger">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
                     </div>
                     <div class="form-group">
-                        <label for="level_id">Level Id</label>
-                        <input type="text" class="form-control" id="level_id" name="level_id" placeholder="Level Id">
-                        {{-- <label for="level_id">Level User</label>
+                        {{-- <label for="level_id">Level Id</label>
+                        <input type="text" class="form-control" id="level_id" name="level_id" placeholder="Level Id"> --}}
+                        <label for="level_id">Level User</label>
                         <input id="level_id"
                             type="text"
                             name="level_id"
@@ -49,7 +49,7 @@
 
                         @error('level_id')
                             <div class = "alert alert-danger">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
                     </div>
                 </div>
                 <div class="card-footer">
