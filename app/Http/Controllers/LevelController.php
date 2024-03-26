@@ -41,7 +41,7 @@ class LevelController extends Controller
         //     'level_kode' => $request->kodeLevel,
         //     'level_nama' => $request->namaLevel,
         $validated = $request->validate([
-            'level_id' => 'required',
+            //'level_id' => 'required',
             'level_kode' => 'required',
             'level_nama' => 'required',
         ]);

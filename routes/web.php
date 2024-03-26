@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +56,5 @@ Route::get('/level/create', [LevelController::class, 'create'])->name('/level/cr
 Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');
 Route::post('/level', [LevelController::class, 'store']);
 
-// Kategori Baru js 6
-// Route::get('/kategori/create', [KategoriController::class, 'create']);
-// Route::post('/kategori', [KategoriController::class, 'store']);
+// m_user
+Route::resource('m_user', POSController::class);
