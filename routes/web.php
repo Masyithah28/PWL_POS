@@ -52,10 +52,12 @@ Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('/user/edit
 Route::post('/user', [UserController::class, 'store']);
 
 // Level Baru js 6
-Route::get('/level', [LevelController::class, 'index'])->name('/level');
+Route::get('/level', [LevelController::class, 'index'])->name('level.index');
 Route::get('/level/create', [LevelController::class, 'create'])->name('/level/create');
-Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');
 Route::post('/level', [LevelController::class, 'store']);
+Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');
+Route::put('/level/{id}', [LevelController::class, 'edit_simpan'])->name('/level/edit_simpan');
+Route::get('/level/delete/{id}', [LevelController::class, 'delete'])->name('/level/delete');
 
 // m_user
 Route::resource('m_user', POSController::class);

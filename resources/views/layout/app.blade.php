@@ -48,6 +48,8 @@
 @stop
 
 
+
+
 {{-- Add common Javascript/Jquery code --}}
 
 
@@ -78,5 +80,3 @@
     */
 
 </style>
-
-@endpush
