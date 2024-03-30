@@ -4,6 +4,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -61,3 +62,6 @@ Route::get('/level/delete/{id}', [LevelController::class, 'delete'])->name('/lev
 
 // m_user
 Route::resource('m_user', POSController::class);
+
+//Jobsheet 7 praktikum 2
+Route::get('/', [WelcomeController::class,'index']); 

@@ -23,12 +23,12 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('/')}}" class="brand-link">
-      <img src="{{ assets ('adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8') }}">
+      <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">PWL - Starter Code</span>
     </a>
 
     <!-- Sidebar -->
-   @include('layout.sidebar')
+    @include('layout.sidebar')
     <!-- /.sidebar -->
   </aside>
 
@@ -38,14 +38,21 @@
     @include('layout.breadcrumb')
 
     <!-- Main content -->
-   <section class="content">
-    @yield('content')
+    <section class="content">
+        @yield('content')
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
+  {{-- Footer --}}
   @include('layout.footer')
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -56,6 +63,6 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+{{-- <script src="../../dist/js/demo.js"></script> --}}
 </body>
 </html>
