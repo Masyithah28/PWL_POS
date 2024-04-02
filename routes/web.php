@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\POSController;
@@ -70,4 +71,15 @@ Route::group(['prefix' => 'kategori'], function () {
     Route::get('/{id}/edit', [KategoriController::class, 'edit']); // menampilkan halaman form edit user
     Route::put('/{id}', [KategoriController::class, 'update']); // menyimpan perubahan data user
     Route::delete('/{id}', [KategoriController::class, 'destroy']); // menghapus data user
+});
+
+Route::group(['prefix' => 'barang'], function () {
+    Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal user
+    Route::post('/list', [BarangController::class, 'list']); // menampilkan data user dalam bentuk json untuk datatables
+    Route::get('/create', [BarangController::class, 'create']); // menampilkan halaman form tambah user
+    Route::post('/', [BarangController::class, 'store']); // menyimpan data user baru
+    Route::get('/{id}', [BarangController::class, 'show']); // menampilkan detail user
+    Route::get('/{id}/edit', [BarangController::class, 'edit']); // menampilkan halaman form edit user
+    Route::put('/{id}', [BarangController::class, 'update']); // menyimpan perubahan data user
+    Route::delete('/{id}', [BarangController::class, 'destroy']); // menghapus data user
 });
