@@ -6,6 +6,7 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\StokController;
 use Illuminate\Support\Facades\Route;
 use Monolog\Level;
 
@@ -60,7 +61,8 @@ Route::group(['prefix' => 'level'], function () {
     Route::get('/{id}/edit', [LevelController::class, 'edit']); // menampilkan halaman form edit user
     Route::put('/{id}', [LevelController::class, 'update']); // menyimpan perubahan data user
     Route::delete('/{id}', [LevelController::class, 'destroy']); // menghapus data user
-});
+}); 
+
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::group(['prefix' => 'kategori'], function () {
     Route::get('/', [KategoriController::class, 'index']); // menampilkan halaman awal user
@@ -82,4 +84,15 @@ Route::group(['prefix' => 'barang'], function () {
     Route::get('/{id}/edit', [BarangController::class, 'edit']); // menampilkan halaman form edit user
     Route::put('/{id}', [BarangController::class, 'update']); // menyimpan perubahan data user
     Route::delete('/{id}', [BarangController::class, 'destroy']); // menghapus data user
+});
+
+Route::group(['prefix' => 'stok'], function () {
+    Route::get('/', [StokController::class, 'index']); //menampilkan halaman awal stok
+    Route::post('/list', [StokController::class, 'list']); //menampilkan data stok dalam bentuk json untuk database
+    Route::get('/create', [StokController::class, 'create']); //menampilkan halaman form tambah
+    Route::post('/', [StokController::class, 'store']); //menyimpan data stok baru
+    Route::get('/{id}', [StokController::class, 'show']); //menampilkan detail stok
+    Route::get('/{id}/edit', [StokController::class, 'edit']); //menampilkan halaman form edit stok
+    Route::put('/{id}', [StokController::class, 'update']); //menyimpan perubahan data stok
+    Route::delete('/{id}', [StokController::class, 'destroy']); //menghapus data stok
 });
