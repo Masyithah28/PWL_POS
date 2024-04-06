@@ -7,6 +7,7 @@ use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\StokController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 use Monolog\Level;
 
@@ -95,4 +96,15 @@ Route::group(['prefix' => 'stok'], function () {
     Route::get('/{id}/edit', [StokController::class, 'edit']); //menampilkan halaman form edit stok
     Route::put('/{id}', [StokController::class, 'update']); //menyimpan perubahan data stok
     Route::delete('/{id}', [StokController::class, 'destroy']); //menghapus data stok
+});
+
+Route::group(['prefix' => 'transaksi'], function () {
+    Route::get('/', [TransaksiController::class, 'index']); //menampilkan halaman awal transaksi
+    Route::post('/list', [TransaksiController::class, 'list']); //menampilkan data transaksi dalam bentuk json untuk database
+    Route::get('create', [TransaksiController::class, 'create']); //menampilkan halaman form tambah transaksi
+    Route::post('/', [TransaksiController::class, 'store']); //menyimpan data transaksi baru
+    Route::get('/{id}', [TransaksiController::class, 'show']); //menampilkan detail transaksi 
+    Route::get('/{id}/edit', [TransaksiController::class, 'edit']); //menampilkan halaman form edit transaksi
+    Route::put('/{id}', [TransaksiController::class, 'update']); //menyimpan perubahan data transaksi
+    Route::delete('/{id}', [TransaksiController::class, 'destroy']); //menghapus data transaksi
 });
