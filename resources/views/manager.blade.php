@@ -1,10 +1,10 @@
-@extends('layout. app' )
+@extends('layout.app' )
 
 {{-- Customize layout sections --}}
 
 @section('subtitle', 'Admin')
 @section('content_header_title', 'Home')
-@section('content_header_subtitle', 'Admin')
+@section('content_header_subtitle', 'Manager')
 
 @section('content')
     <div class="container">
