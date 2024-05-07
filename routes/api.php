@@ -52,3 +52,4 @@ Route::get('barang/{barang}', [BarangController::class, 'show']);
 Route::put('barang/{barang}', [BarangController::class, 'update']);
 Route::delete('barang/{barang}', [BarangController::class, 'destroy']);
 
+Route::post('/register1', App\Http\Controllers\Api\RegisterController::class)->name('register1');
